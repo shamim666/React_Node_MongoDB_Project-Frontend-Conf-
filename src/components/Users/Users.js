@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Users = () => {
 
@@ -45,7 +46,8 @@ const handleDeleteUser = id =>{
                 {
                    users.map( user => <li key={user._id}>name:{user.name}; email: {user.email} 
                    
-                   <button>update</button>
+                   {/* it will take to App.js dynamic route section */}
+                    <Link to = {`/users/update/${user._id}`} > <button>update</button></Link>
                    <button onClick={() => handleDeleteUser(user._id)}>X</button>
                    
                    </li> ) 
